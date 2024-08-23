@@ -7,7 +7,7 @@ function render(todos) {
     ctr = 0;
     todos.forEach(todo => {
         const div = document.createElement("div");
-        const h1 = document.createElement("h1");
+        const h1 = document.createElement("h2");
         const deleteButton = document.createElement("button")
         deleteButton.setAttribute('onclick','deleteTodo('+ ctr + ')');
         deleteButton.innerHTML = 'Delete'
@@ -15,6 +15,7 @@ function render(todos) {
         div.appendChild(h1);
         div.appendChild(deleteButton);        
         div.setAttribute('data-id',ctr);
+        div.setAttribute('class','tasks');
         todoList.appendChild(div);
         ctr++;
     });
@@ -23,11 +24,15 @@ function render(todos) {
 }
 
 function addTodo() {
-
+    if(document.getElementById("newInput").value == ''){
+        alert('Please enter task Name');
+        return;
+    }
     todos.push({
         id: ctr,
         title: document.getElementById("newInput").value,
     })
+    document.getElementById("newInput").value = "";
     render(todos);
     ctr++;
 
