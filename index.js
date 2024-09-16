@@ -1,28 +1,42 @@
-// function addTodo() {
-//     const value = document.querySelector("input").value;
-//     const spanEl = document.createElement("span");
-//     const buttonEl = document.createElement("button");
-//     spanEl.innerHTML = value;
-//     buttonEl.innerHTML = "Delete";
-//     const newTodoDivEl = document.createElement("div");
-//     newTodoDivEl.appendChild(buttonEl);
-//     newTodoDivEl.appendChild(spanEl);
-//     document.querySelector("body").appendChild(newTodoDivEl); 
-// }
+const express = require("express");
+const jwt = require("jsonwebtoken");
 
-let todos = [];
-    function addTodo() {
-      todos.push({
-        title: document.querySelector("input").value
-      })
-      render();
-    }
+const app = express();
 
-    function deleteTodo() {
-      
-      render();
+app.use(express.json());
+
+var users = [];
+
+app.post("/signup", function(req,res) {
+    const username = req.body.username;
+    const password = req.body.password;
+    users.push({
+        username: username,
+        password: password
+    })
+
+    res.json({
+        message: "You are singned in"
+    })
+})
+
+app.post("/signin", function(req,res) {
+    const username = req.body.username;
+    const password = req.body.password;
+    
+    let foundUser = null;
+    
+    for(let i = 0; i < users.length;i++){
+        if(user[i].username === username && users[i].password === password){
+            foundUser = usera[i]
+        }
     }
- 
-    function render() {
-      
+    if(!foundUser){
+        res.json({
+            message: "Invalid Creditential!!"
+        })
     }
+    else{
+        
+    }
+})
