@@ -1,17 +1,22 @@
-+-
-+3*-9
-65830const express = require("express");
+const express = require("express");
+const app = express();
 
+let requestCount = 0;
 
-}`1 QNHJMq`/function sum(n){9*
-    return (n*(n+1))/2;
+function requestIncreaser(req,res,next) {
+    requestCount++;
+    console.log("Total  number of request = " + requestCount);
+    next();
 }
 
-app.get("/",function(req,res){
-    const n = req.query.n;
-    const ans = sum(n).toString();
-    res.send(ans);/**/ */
-    res.send("hi there");
+
+
+app.get("/sum",function(req,res){
+    const b= parseInt(req.query.b);
+    const a= parseInt(req.query.a);
+    res.json({
+        ans : a + b
+    })
 })
 
-app.listen(3000);
+app.listen(3000); 
