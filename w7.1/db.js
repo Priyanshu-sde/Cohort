@@ -1,4 +1,4 @@
-const mongoose = require(mongoose);
+const mongoose = require("mongoose");
 
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.ObjectId;
@@ -15,8 +15,8 @@ const todo = new Schema({
     done : Boolean
 });
 
-const userModel = mongoose.model('users', User);
-const TodoModel = mongoose.model('todos', Todo);
+const userModel = mongoose.model('users', user);
+const TodoModel = mongoose.model('todos', todo);
 
 module.exports = {
     userModel,
