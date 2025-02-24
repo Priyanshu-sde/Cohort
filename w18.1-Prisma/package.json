@@ -1,7 +1,19 @@
 {
-  "name": "create-p",
-  "version": "0.0.1",
-  "dependencies": {
-    "@prisma/client": "^6.1.0"
+  "name": "w18.1-prisma",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "prisma": "^6.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
   }
 }
