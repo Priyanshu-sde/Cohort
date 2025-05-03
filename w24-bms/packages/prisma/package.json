@@ -11,7 +11,7 @@
     "@repo/typescript-config": "workspace:*"
   },
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "description": "",
   "dependencies": {
     "@prisma/client": "6.5.0",
